@@ -1,0 +1,122 @@
+[
+    {
+        "id": 47,
+        "name_ru": "\u0422\u0435\u0430\u0442\u0440\u0430\u043b\u044c\u043d\u0430\u044f",
+        "name_en": "Teatralnaya"
+    },
+    {
+        "id": 41,
+        "name_ru": "\u0421\u043e\u043a\u043e\u043b",
+        "name_en": "Sokol"
+    },
+    {
+        "id": 45,
+        "name_ru": "\u041c\u0430\u044f\u043a\u043e\u0432\u0441\u043a\u0430\u044f",
+        "name_en": "Mayakovskaya"
+    },
+    {
+        "id": 116,
+        "name_ru": "\u041e\u0440\u0435\u0445\u043e\u0432\u043e",
+        "name_en": "Orekhovo"
+    },
+    {
+        "id": 88,
+        "name_ru": "\u0410\u0432\u0442\u043e\u0437\u0430\u0432\u043e\u0434\u0441\u043a\u0430\u044f",
+        "name_en": "Avtozavodskaya"
+    },
+    {
+        "id": 2,
+        "name_ru": "\u0425\u043e\u0432\u0440\u0438\u043d\u043e",
+        "name_en": "Khovrino"
+    },
+    {
+        "id": 6,
+        "name_ru": "\u0411\u0435\u043b\u043e\u043c\u043e\u0440\u0441\u043a\u0430\u044f",
+        "name_en": "Belomorskaya"
+    },
+    {
+        "id": 7,
+        "name_ru": "\u0420\u0435\u0447\u043d\u043e\u0439 \u0432\u043e\u043a\u0437\u0430\u043b",
+        "name_en": "Rechnoy Vokzal"
+    },
+    {
+        "id": 25,
+        "name_ru": "\u0412\u043e\u0434\u043d\u044b\u0439 \u0441\u0442\u0430\u0434\u0438\u043e\u043d",
+        "name_en": "Vodniy Stadion"
+    },
+    {
+        "id": 42,
+        "name_ru": "\u0410\u044d\u0440\u043e\u043f\u043e\u0440\u0442",
+        "name_en": "Aeroport"
+    },
+    {
+        "id": 43,
+        "name_ru": "\u0414\u0438\u043d\u0430\u043c\u043e",
+        "name_en": "Dinamo"
+    },
+    {
+        "id": 46,
+        "name_ru": "\u0422\u0432\u0435\u0440\u0441\u043a\u0430\u044f",
+        "name_en": "Tverskaya"
+    },
+    {
+        "id": 48,
+        "name_ru": "\u041d\u043e\u0432\u043e\u043a\u0443\u0437\u043d\u0435\u0446\u043a\u0430\u044f",
+        "name_en": "Novokuznetskaya"
+    },
+    {
+        "id": 49,
+        "name_ru": "\u041f\u0430\u0432\u0435\u043b\u0435\u0446\u043a\u0430\u044f",
+        "name_en": "Paveletskaya"
+    },
+    {
+        "id": 89,
+        "name_ru": "\u0422\u0435\u0445\u043d\u043e\u043f\u0430\u0440\u043a",
+        "name_en": "Tekhnopark"
+    },
+    {
+        "id": 92,
+        "name_ru": "\u041a\u043e\u043b\u043e\u043c\u0435\u043d\u0441\u043a\u0430\u044f",
+        "name_en": "Kolomenskaya"
+    },
+    {
+        "id": 95,
+        "name_ru": "\u041a\u0430\u0448\u0438\u0440\u0441\u043a\u0430\u044f",
+        "name_en": "Kashirskaya"
+    },
+    {
+        "id": 98,
+        "name_ru": "\u041a\u0430\u043d\u0442\u0435\u043c\u0438\u0440\u043e\u0432\u0441\u043a\u0430\u044f",
+        "name_en": "Kantemirovskaya"
+    },
+    {
+        "id": 101,
+        "name_ru": "\u0426\u0430\u0440\u0438\u0446\u044b\u043d\u043e",
+        "name_en": "Tsaritsyno"
+    },
+    {
+        "id": 142,
+        "name_ru": "\u0414\u043e\u043c\u043e\u0434\u0435\u0434\u043e\u0432\u0441\u043a\u0430\u044f",
+        "name_en": "Domodedovskaya"
+    },
+    {
+        "id": 147,
+        "name_ru": "\u041a\u0440\u0430\u0441\u043d\u043e\u0433\u0432\u0430\u0440\u0434\u0435\u0439\u0441\u043a\u0430\u044f",
+        "name_en": "Krasnogvardeyskaya"
+    },
+    {
+        "id": 148,
+        "name_ru": "\u0410\u043b\u043c\u0430-\u0410\u0442\u0438\u043d\u0441\u043a\u0430\u044f",
+        "name_en": "Alma-Atinskaya"
+    },
+    {
+        "id": 40,
+        "name_ru": "\u0412\u043e\u0439\u043a\u043e\u0432\u0441\u043a\u0430\u044f",
+        "name_en": "Voykovskaya"
+    },
+    {
+        "id": 44,
+        "name_ru": "\u0411\u0435\u043b\u043e\u0440\u0443\u0441\u0441\u043a\u0430\u044f",
+        "name_en": "Belorusskaya"
+    }
+]
