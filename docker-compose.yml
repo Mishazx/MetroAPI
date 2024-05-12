@@ -1,11 +1,76 @@
-version: '3'
-
 services:
   web:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile.web
+      cache_from:
+        - metroapi:latest
+      args:
+        BASE_IMAGE: ${BASE_IMAGE}
     image: metroapi
+    container_name: Metro_API
     ports:
-      - "11111:5000"
+      - "11111:20000"
     volumes:
+      - .:/app
       - /etc/localtime:/etc/localtime:ro
+      - django_static_volume:/app/static
+    env_file:
+      - .env 
     restart: always
+    environment:
+      - CELERY_BROKER_URL=redis://redis:6379/0
+    depends_on:
+      - db
+      - celery
+      - redis
+    networks:
+      - Metro_API_Network
+
+
+  db:
+    image: postgres:13
+    container_name: Metro_API_DB
+    restart: always
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    env_file:
+      - .env
+    networks:
+      - Metro_API_Network
+
+
+  redis:
+    image: redis
+    container_name: Metro_API_Redis
+    restart: always
+    volumes:
+      - redis-data:/data
+    networks:
+      - Metro_API_Network
+
+  celery:
+    build:
+      context: .
+      dockerfile: Dockerfile.celery
+      args:
+        BASE_IMAGE: ${BASE_IMAGE}
+    container_name: Metro_API_Worker
+    environment:
+      - CELERY_BROKER_URL=redis://redis:6379/0
+    volumes:
+      - .:/app
+    depends_on:
+      - redis
+    restart: always
+    networks:
+      - Metro_API_Network
+
+volumes:
+  redis-data:
+  django_static_volume:
+  postgres_data:
+
+networks:
+  Metro_API_Network:
+      driver: bridge

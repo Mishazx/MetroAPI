@@ -1,5 +1,12 @@
+# my exception
+Metro_API/*
+db/*
+test/*
+static/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
+__pycache__/*
 *.py[cod]
 *$py.class
 

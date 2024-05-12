@@ -1,4 +1,4 @@
-from MetroAPI import app, DEBUG, IP, PORT
+from Metro_API import flask, DEBUG, IP, PORT
 
 if __name__ == '__main__':
-    app.run(debug=DEBUG, host=IP, port=PORT)
+    flask.run(debug=DEBUG, host=IP, port=PORT)
