@@ -7,7 +7,7 @@ import requests
 import concurrent.futures
 from django.utils.timezone import activate
 
-from TrainAPI.models import Station, Train, Wagon
+from TrainAPI.models import Location, Station, Train, Wagon
 from TrainAPI.request import station_request
 from TrainAPI.utils import GetListMoscow, GetListStation
 
@@ -35,20 +35,25 @@ def GenerationListStation(request):
                 "name_ru": station["name"]["ru"],
                 "name_en": station["name"].get("en", ""),
                 "lineId": station["lineId"],
+                "location": station["location"]
                 } for station in all_stations]
             
             for station_data in filtered_data:
-                station = Station(
-                id=station_data["id"],
-                lineId=station_data["lineId"],
-                name_ru=station_data["name_ru"],
-                name_en=station_data["name_en"]
+                location, _ = Location.objects.update_or_create(lat=station_data["location"]["lat"], lon=station_data["location"]["lon"])
+                Station.objects.update_or_create(
+                    id=station_data["id"],
+                    lineId=station_data["lineId"],
+                    name_ru=station_data["name_ru"],
+                    name_en=station_data["name_en"],
+                    location=location
                 )
-                station.save()
+
             return JsonResponse({'status': 'ok', 'tatus_code': response.status_code, 'data': 'Данные успешно сохранены в базу данных'})
         else:
             return JsonResponse({'status': 'ok', 'tatus_code': response.status_code, 'data': 'error'})
     except Exception as e:
+        import traceback
+        print(traceback.format_exc())
         return JsonResponse({'status': 'ok', 'tatus_code': 500, 'data': str(e)})
     
 
@@ -130,6 +135,9 @@ def get_moscow_msg(request):
         strings += f"Прибудет примерно {io_future_time_str}  \n"
         strings += '\n'
     
+    if strings == '':
+        return HttpResponse('Поезда не найдены')
+    
     return HttpResponse(strings)
 
 
@@ -140,5 +148,8 @@ def get_moscow_msg(request):
     
 #     return JsonResponse({'data': result})
 
-
+def get_count_moscow_msg(request):
+    data = GetListMoscow()
+    count = len(data)
+    return HttpResponse('Количество поездов Москва: {}'.format(count))
     

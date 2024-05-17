@@ -1,5 +1,6 @@
 import os
 from celery import Celery
+from django.conf import settings
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'MetroAPI.settings')
 
@@ -10,6 +11,10 @@ app.autodiscover_tasks()
 
 from celery.schedules import crontab
 from celery.beat import Scheduler
+
+app.conf.update({
+    'CELERY_MAIN_TASK_ENABLED': settings.CELERY_MAIN_TASK_ENABLED
+})
 
 app.conf.tasks = ['main_task']
 

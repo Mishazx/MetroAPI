@@ -147,3 +147,6 @@ ALLOWED_HOSTS = ['*']
 
 CELERY_BROKER_URL = 'redis://redis:6379/0'
 CELERY_RESULT_BACKEND = 'redis://redis:6379/0'
+
+CELERY_MAIN_TASK_ENABLED = True
+

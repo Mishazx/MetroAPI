@@ -8,5 +8,7 @@ urlpatterns = [
     path('train/<int:station_id>/', views.update_train, name='updateTrain'),
     path('trains/', views.update, name='update'),
     path('get_moscow_msg/', views.get_moscow_msg, name='getMoscow'),
+    path('get_count_moscow_msg/', views.get_count_moscow_msg, name='getCountMoscow'),
+    
     # path('stations/get/', views.GetListStation, name='getListStation'),
 ]
