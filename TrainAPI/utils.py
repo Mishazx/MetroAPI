@@ -13,8 +13,5 @@ def GetListStation():
 def GetListMoscow():
     activate(settings.TIME_ZONE)
     trains = Train.objects.values().filter(line=2, id__startswith='775_753')
-    # trains = Train.objects.values().filter(line=2).filter(id__istartswith='775_753')
-    # trains = Train.objects.values().filter(line=2).filter(id__regex=r'^775_753\d+')
-
     result = list(trains)
     return result

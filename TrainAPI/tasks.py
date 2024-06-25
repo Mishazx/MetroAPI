@@ -1,5 +1,4 @@
 from celery import shared_task
-# from django.conf import settings
 from MetroAPI import settings
 from MetroAPI.celery import app
 from TrainAPI.request import station_request

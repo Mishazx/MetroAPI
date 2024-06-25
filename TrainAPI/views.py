@@ -151,5 +151,38 @@ def get_moscow_msg(request):
 def get_count_moscow_msg(request):
     data = GetListMoscow()
     count = len(data)
-    return HttpResponse('Количество поездов Москва: {}'.format(count))
+    
+    count_active = 0
+    
+    result = GetListMoscow()
+    print(result)
+    if result is None:
+        return HttpResponse('Поезда не найдены')
+    
+    strings = ''
+    
+    for data in result:
+        mod_time = data['modification_time']
+        datatime_info = mod_time.strftime('%H:%M:%S %d-%m-%Y')
+        
+        arrival_time_seconds = data['arrival_time']
+        arrival_time_delta = timedelta(seconds=arrival_time_seconds)
+        
+        future_time = mod_time + arrival_time_delta
+        io_future_time_str = future_time.strftime('%H:%M:%S')
+        future_time_str  = future_time.strftime('%H:%M:%S %d-%m-%Y')
+        
+        now_time = datetime.now()
+        
+        future_time_datetime = datetime.strptime(future_time_str, '%H:%M:%S %d-%m-%Y')
+        time_difference =  now_time - future_time_datetime
+        
+        if time_difference > timedelta(hours=1):
+            continue
+        
+        count_active += 1
+    
+    return HttpResponse(f'Количество поездов: {count}\nКоличество поездов на линии: {count_active}')
+
+    # return HttpResponse('Количество поездов Москва: {}'.format(count))
     
